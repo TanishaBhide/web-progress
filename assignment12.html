@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box coloring using DOM concepts</title>
+    <style>
+        .box{
+            height:45px;
+            width: 45px;
+            border:2px solid black
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box1</div>
+        <div class="box">Box2</div>
+        <div class="box">Box3</div>
+        <div class="box">Box4</div>
+        <div class="box">Box5</div>
+    </div>
+    <script>
+        let obj={0:"red",1:"blue",2:"green",3:"yellow",4:"purple"};
+        let boxes= document.getElementsByClassName("box");
+        for(let i=0;i<boxes.length;i++){
+            boxes[i].style.backgroundColor=obj[Math.floor(Math.random()*5)];
+            boxes[i].style.color=obj[Math.floor(Math.random()*5)];
+        }
+    </script>
+</body>
+</html>
